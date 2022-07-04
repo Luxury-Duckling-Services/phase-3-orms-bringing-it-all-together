@@ -1,0 +1,14 @@
+require 'pry'
+require_relative '../config/environment'
+
+def reset_database
+  Dog.drop_table
+  Dog.create_table
+  Dog.create(name: "ABC", breed: "one")
+  Dog.create(name: "EFG", breed: "two")
+end
+
+reset_database
+
+binding.pry
+"pls"
